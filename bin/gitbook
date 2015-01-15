@@ -1,0 +1,2 @@
+#!/bin/sh
+docker run --name=gitbook --rm -v $(pwd):/gitbook -p 4000:4000 -ti tommylau/gitbook gitbook $@

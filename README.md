@@ -1,8 +1,8 @@
 # docker-node
 
-## gitbook
+## Basic usage
 
-### How to use it:
+### gitbook
 
 Run the following command in the GitBook repoistory:
 
@@ -14,9 +14,7 @@ then you can visit the GitBook preview at the following address: ```http://local
 
 If you want to see the quit, press ```CTRL + C``` to terminate the program.
 
-## hexo
-
-### How to use it:
+### hexo
 
 Run the following command in the Hexo repoistory:
 
@@ -24,6 +22,30 @@ Run the following command in the Hexo repoistory:
 docker run --name=hexo --rm -v $(pwd):/hexo -p 4000:4000 tommylau/hexo
 ```
 
-then you can visit the Hexo preview at the following address: ```http://localhost:4000/```
+then you can visit the Hexo preview at the following address: `http://localhost:4000/`
 
-If you want to see the quit, press ```CTRL + C``` to terminate the program.
+If you want to see the quit, press `CTRL + C` to terminate the program.
+
+## Advanced usage
+
+Copy `hexo` and `gitbook` from `bin` to your system's run path, for example: `/usr/local/bin/` and remember to give them to execute right:
+
+```bash
+chmod +x /usr/local/bin/hexo
+chmod +x /usr/local/bin/gitbook
+```
+
+Then you can call `hexo` or `gitbook` just like it's a native program, you can't even feel the containers ever existed.
+
+```bash
+$ cd /path/to/hexo
+$ hexo generate
+$ hexo deploy
+```
+
+```bash
+$ cd /path/to/gitbook
+$ gitbook pdf
+$ gitbook epub
+```
+

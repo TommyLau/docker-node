@@ -1,0 +1,2 @@
+#!/bin/sh
+docker run --name=hexo --rm -v $(pwd):/hexo -p 4000:4000 -ti tommylau/hexo hexo $@
