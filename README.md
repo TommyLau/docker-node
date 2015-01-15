@@ -21,7 +21,7 @@ If you want to see the quit, press ```CTRL + C``` to terminate the program.
 Run the following command in the Hexo repoistory:
 
 ```bash
-docker run --name=hexo --rm -v $(pwd):/gitbook -p 4000:4000 tommylau/hexo
+docker run --name=hexo --rm -v $(pwd):/hexo -p 4000:4000 tommylau/hexo
 ```
 
 then you can visit the Hexo preview at the following address: ```http://localhost:4000/```

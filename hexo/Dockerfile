@@ -2,7 +2,7 @@ FROM node
 
 MAINTAINER Tommy Lau <tommy@gen-new.com>
 
-# Install GitBook
+# Install Hexo
 RUN npm install hexo@2.8.3 -g
 
 # Prepare work directory
@@ -11,4 +11,4 @@ WORKDIR /hexo
 
 EXPOSE 4000
 
-CMD ["hexo", "server"]
+CMD ["hexo", "server", "-i", "0.0.0.0"]
