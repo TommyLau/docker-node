@@ -1,4 +1,4 @@
-FROM node
+FROM node:slim
 
 MAINTAINER Tommy Lau <tommy@gen-new.com>
 
