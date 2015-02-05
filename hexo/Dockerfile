@@ -5,6 +5,9 @@ MAINTAINER Tommy Lau <tommy@gen-new.com>
 # Install Git, needed to publish to GitHub
 RUN apt-get update && apt-get install -y git ssh-client rsync --no-install-recommends && rm -r /var/lib/apt/lists/*
 
+# Change timezone to China Standard Time
+RUN echo "Asia/Shanghai" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
+
 # Install Hexo
 RUN npm install hexo@2.8.3 -g
 
