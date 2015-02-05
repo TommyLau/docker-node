@@ -3,7 +3,7 @@ FROM node:slim
 MAINTAINER Tommy Lau <tommy@gen-new.com>
 
 # Install Git, needed to publish to GitHub
-RUN apt-get update && apt-get install -y git rsync --no-install-recommends && rm -r /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git ssh-client rsync --no-install-recommends && rm -r /var/lib/apt/lists/*
 
 # Install Hexo
 RUN npm install hexo@2.8.3 -g
