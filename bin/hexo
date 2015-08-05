@@ -1,9 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 # Please place this file in /usr/local/bin, and set the execution right.
 COMMAND=""
+PARAMS=""
+
 if [ "$1" != "bash" ] && [ "$1" != "npm" ]; then
 	COMMAND="hexo"
+	if [ "$COMMAND" == "hexo" -a "$1" == "s" ]; then
+		PARAMS="-i 0.0.0.0"
+	fi
 fi
 
-docker run --name=hexo -ti --rm -v $(pwd):/hexo -v ~/.ssh/id_rsa:/root/.ssh/id_rsa -v ~/.ssh/known_hosts:/root/.ssh/known_hosts -v ~/.gitconfig:/root/.gitconfig -p 4000:4000 tommylau/hexo $COMMAND "$@"
+docker run --name=hexo -ti --rm -v $(pwd):/hexo -v ~/.ssh/id_rsa:/root/.ssh/id_rsa -v ~/.ssh/known_hosts:/root/.ssh/known_hosts -v ~/.gitconfig:/root/.gitconfig -p 4000:4000 tommylau/hexo $COMMAND "$@" $PARAMS
 
