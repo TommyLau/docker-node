@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y git ssh-client rsync --no-install-recom
 RUN echo "Asia/Shanghai" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
 # Install Hexo
-RUN npm install hexo@2.8.3 -g
+RUN npm install hexo-cli -g
 
 # Prepare work directory
 RUN mkdir /hexo
