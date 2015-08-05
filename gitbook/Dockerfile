@@ -3,10 +3,10 @@ FROM node:slim
 MAINTAINER Tommy Lau <tommy@gen-new.com>
 
 # Install GitBook
-RUN npm install gitbook@1.5.0 -g
+RUN npm install gitbook-cli -g
 
 # Enable GitBook to output PDF file
-RUN apt-get update && apt-get install -y calibre && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y calibre git && rm -rf /var/lib/apt/lists/*
 
 # Prepare work directory
 RUN mkdir /gitbook
